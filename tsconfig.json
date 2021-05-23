@@ -1,0 +1,45 @@
+{
+  "compilerOptions": {
+    "allowUnreachableCode": true, // 不报告执行不到的代码错误。
+    "allowUnusedLabels": true,	// 不报告未使用的标签错误
+    "alwaysStrict": false, // 以严格模式解析并为每个源文件生成 "use strict"语句
+    "target": "esnext",
+    "module": "esnext",
+    "strict": true,
+    "jsx": "preserve",
+    "importHelpers": true,
+    "noImplicitThis": true,
+    "moduleResolution": "node",
+    "experimentalDecorators": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "sourceMap": true,
+    "baseUrl": ".",
+    "types": [
+      "webpack-env"
+    ],
+    "paths": {
+      "@/*": [
+        "src/*"
+      ]
+    },
+    "lib": [
+      "esnext",
+      "dom",
+      "dom.iterable",
+      "scripthost"
+    ]
+  },
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "src/**/*.vue",
+    "tests/**/*.ts",
+    "tests/**/*.tsx", "src/utils/index.js",
+    "node_modules/vue-tsx-support/enable-check.d.ts" // 添加支持 tsx校验
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}
+
