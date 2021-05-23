@@ -1,7 +1,7 @@
 <!--
  * @Author: WannTonn
  * @Date: 2021-05-22 17:25:56
- * @LastEditTime: 2021-05-23 21:42:54
+ * @LastEditTime: 2021-05-23 22:42:30
  * @LastEditors: WannTonn
  * @Description: 
  * @FilePath: /queryInput/src/components/SearchBar/index.vue
@@ -92,6 +92,7 @@ export default class SearchBar extends Vue {
 
   searchForm: any = {};
   mounted() {
+    /* 添加防抖 */
     this.handleQuery = debounce(this.handleQuery, 500, false);
   }
 
@@ -104,6 +105,7 @@ export default class SearchBar extends Vue {
   handleQueryFormChange(val: any) {
     this.searchForm = val;
   }
+
 }
 </script>
 

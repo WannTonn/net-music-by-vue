@@ -1,7 +1,7 @@
 <!--
  * @Author: WannTonn
  * @Date: 2021-05-22 17:26:16
- * @LastEditTime: 2021-05-23 22:11:15
+ * @LastEditTime: 2021-05-23 22:44:15
  * @LastEditors: WannTonn
  * @Description: 
  * @FilePath: /queryInput/src/components/SideMenu/index.vue
@@ -20,7 +20,12 @@
       />
       <div>WannTonn</div>
     </div>
-    <el-menu mode="vertical" style="height: calc(100vh - 100px); border-right: 0 none;" :default-active="defaultActive" router>
+    <el-menu
+      mode="vertical"
+      style="height: calc(100vh - 100px); border-right: 0 none;"
+      :default-active="defaultActive"
+      router
+    >
       <el-menu-item index="Home" :route="{ name: 'Home' }">
         <i class="el-icon-s-home"></i>
         <span slot="title">首页</span>
@@ -35,6 +40,7 @@
             <el-menu-item-group>
               <template slot="title">
                 <i :class="item.children[0]['meta']['icon'] || ''"></i>
+                {{ item.children[0]["meta"]["groupName"] }}
               </template>
               <el-menu-item
                 v-for="i in item.children"
@@ -65,7 +71,7 @@ import { Vue, Component } from "vue-property-decorator";
 })
 export default class SideMenu extends Vue {
   menuList: any;
-  defaultActive: any = '';
+  defaultActive: any = "";
   imgSrc: String =
     "https://fuss10.elemecdn.com/e/5d/4a731a90594a4af544c0c25941171jpeg.jpeg";
   splitImg: any = require("@/assets/pictureSplit.svg"); // 当图片丢失的时候显示图片丢失的图
@@ -87,7 +93,7 @@ export default class SideMenu extends Vue {
 .side-wrapper {
   width: 100%;
   border-right: 1px solid #e6e6e6;
-.avatar-wrapper {
+  .avatar-wrapper {
     width: 100%;
     height: 100px;
     text-align: center;

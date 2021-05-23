@@ -1,7 +1,7 @@
 /*
  * @Author: WannTonn
  * @Date: 2021-05-22 16:08:24
- * @LastEditTime: 2021-05-23 19:26:43
+ * @LastEditTime: 2021-05-23 22:44:34
  * @LastEditors: WannTonn
  * @Description:
  * @FilePath: /queryInput/src/router/modules/intro/intro_list.ts
@@ -21,7 +21,7 @@ export default {
       path: "index",
       name: "introIndex",
       component: IntroIndex,
-      meta: { title: "音乐信息获取", icon: "el-icon-guide" }
+      meta: { title: "音乐信息获取", icon: "el-icon-guide", groupName: "分组1" }
     }
   ]
 };

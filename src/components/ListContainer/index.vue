@@ -1,7 +1,7 @@
 <!--
  * @Author: WannTonn
  * @Date: 2021-05-23 10:03:38
- * @LastEditTime: 2021-05-23 22:06:42
+ * @LastEditTime: 2021-05-23 22:41:58
  * @LastEditors: WannTonn
  * @Description: 
  * @FilePath: /queryInput/src/components/ListContainer/index.vue
@@ -74,7 +74,7 @@ let customRender: any = {
     }
   }
 };
-import { Component, Vue, Prop } from "vue-property-decorator";
+import { Component, Vue, Prop, Watch } from "vue-property-decorator";
 import searchBar from "@/components/SearchBar/index.vue";
 import { mapGetters } from "vuex";
 
@@ -112,7 +112,6 @@ export default class listContainer extends Vue {
     // 触发执行搜索
     this.handleSearchData();
   }
-
   /**
    *
    * @param data
@@ -135,10 +134,8 @@ export default class listContainer extends Vue {
         return "";
       }
       params = JSON.parse((this as any).Base64.decode(url));
-      this.$store.dispatch("setSearchParams", params);
-    } else {
-      params = this.searchParams;
     }
+    this.$store.dispatch("setSearchParams", params);
     this.queryForm = params;
   }
   /*

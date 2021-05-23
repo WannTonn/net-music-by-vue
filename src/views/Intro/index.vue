@@ -1,7 +1,7 @@
 <!--
  * @Author: WannTonn
  * @Date: 2021-05-22 16:15:12
- * @LastEditTime: 2021-05-23 22:13:35
+ * @LastEditTime: 2021-05-23 22:40:56
  * @LastEditors: WannTonn
  * @Description: 
  * @FilePath: /queryInput/src/views/Intro/index.vue
@@ -36,7 +36,7 @@ export default class MusicList extends Vue {
       prop: "type",
       placeholder: "请选择查询类型",
       type: "select",
-      required: true,
+      // required: true,
       dataSource: [
         { label: "请选择", value: undefined },
         { label: "单曲", value: 1 },
@@ -49,7 +49,7 @@ export default class MusicList extends Vue {
       label: "关键字",
       prop: "s",
       placeholder: "请输入关键字",
-      required: true,
+      // required: true,
       type: "input"
     },
     {
@@ -71,7 +71,7 @@ export default class MusicList extends Vue {
   ];
 
   /*
-   * 由组件传回请求的条件，用来请求数据
+   * 由组件传回请求的条件，用来请求数据 以及展示不同的table 头部
    */
   handleQuery(value: any) {
     let resMap: any = {
@@ -230,7 +230,9 @@ export default class MusicList extends Vue {
       this.columns = [];
     }
     this.loading = true;
-
+    /* 
+    * 获取列表数据
+    */
     getMusicList(
       Object.assign(
         {
