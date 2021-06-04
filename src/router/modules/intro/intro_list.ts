@@ -1,8 +1,8 @@
 /*
  * @Author: WannTonn
  * @Date: 2021-05-22 16:08:24
- * @LastEditTime: 2021-05-23 22:44:34
- * @LastEditors: WannTonn
+ * @LastEditTime: 2021-06-03 16:10:12
+ * @LastEditors: Please set LastEditors
  * @Description:
  * @FilePath: /queryInput/src/router/modules/intro/intro_list.ts
  */
@@ -10,6 +10,8 @@ const Container = () =>
   import(/* webpackChunkName: "container" */ "@/components/Layout/index.vue");
 const IntroIndex = () =>
   import(/* webpackChunkName: "intro" */ "@/views/Intro/index.vue");
+const Clipper = () =>
+  import(/* webpackChunkName: "clipper" */ "@/views/Upload/index.vue");
 export default {
   path: "/intro",
   redirect: "/intro/index",
